@@ -293,6 +293,46 @@ export default function ContactPage() {
                   إرسال الرسالة
                 </button>
               </form>
+              {/* Quick Contact Section - Redesigned and Inserted After Form Submission */}
+              <div className="mt-10">
+                <div
+                  className="rounded-2xl shadow-md p-6 md:p-8 text-white"
+                  style={{ backgroundColor: "#70b2af" }}
+                >
+                  <h3 className="text-2xl font-bold mb-4 text-center">
+                    تواصل سريع
+                  </h3>
+                  <p className="text-center text-white/90 mb-8">
+                    للحصول على استشارة فورية أو حجز موعد عاجل
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Call Now */}
+                    <a
+                      href="tel:+967771794448"
+                      className="bg-white text-[#70b2af] rounded-xl p-5 text-center flex flex-col items-center justify-center hover:bg-gray-100 transition"
+                    >
+                      <Phone className="w-10 h-10 mb-3" />
+                      <h4 className="text-lg font-semibold mb-1">اتصل الآن</h4>
+                      <p className="text-sm font-medium">+967771794448</p>
+                    </a>
+
+                    {/* WhatsApp */}
+                    <a
+                      href="https://wa.me/967771794448"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white text-[#70b2af] rounded-xl p-5 text-center flex flex-col items-center justify-center hover:bg-gray-100 transition"
+                    >
+                      <MessageCircle className="w-10 h-10 mb-3" />
+                      <h4 className="text-lg font-semibold mb-1">
+                        واتساب مباشر
+                      </h4>
+                      <p className="text-sm font-medium">تواصل عبر WhatsApp</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Contact Info */}
@@ -389,56 +429,18 @@ export default function ContactPage() {
                 <h3 className="text-xl font-bold text-gray-800 mb-4">
                   موقعنا على الخريطة
                 </h3>
-                <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                    <p className="text-gray-500">خريطة الموقع</p>
-                    <p className="text-sm text-gray-400">
-                      سيتم إضافة الخريطة قريباً
-                    </p>
-                  </div>
+                <div className="bg-gray-200 rounded-lg overflow-hidden w-full h-[450px]">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d285.5311507261006!2d44.189411772672734!3d15.368005268762213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1753963396430!5m2!1sen!2s"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Contact */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                تواصل سريع
-              </h2>
-              <p className="text-gray-600">
-                للحصول على استشارة فورية أو حجز موعد عاجل
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <a
-                href="tel:+967771794448"
-                style={{ backgroundColor: "#5a9e9d" }}
-                className="text-white p-6 rounded-2xl text-center hover:opacity-90 transition-colors duration-300 group"
-              >
-                <Phone className="w-12 h-12 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold mb-2">اتصل الآن</h3>
-                <p className="opacity-90">+967771794448</p>
-              </a>
-
-              <a
-                href="https://wa.me/967771794448"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ backgroundColor: "#d03a82" }}
-                className="text-white p-6 rounded-2xl text-center hover:opacity-90 transition-colors duration-300 group"
-              >
-                <MessageCircle className="w-12 h-12 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold mb-2">واتساب</h3>
-                <p className="opacity-90">تواصل فوري</p>
-              </a>
             </div>
           </div>
         </div>
