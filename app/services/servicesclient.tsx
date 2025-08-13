@@ -237,7 +237,7 @@ export default function ServicesPage() {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
                     <Image
-                      src="/services.png"
+                      src="/services_.png"
                       alt="عيادة التغذية"
                       width={800} // Set the width of the image
                       height={600} // Set the height of the image
