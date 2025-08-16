@@ -5,14 +5,11 @@ import "./globals.css";
 import { Suspense } from "react";
 import Loading from "@/components/Loading";
 
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nutrsalma.com/"),
   title: {
-    default:
-      "عيادة التغذية العلاجية والحميات — الدكتورة سلمى محمد الحبيشي",
-    template:
-      "%s | عيادة التغذية العلاجية — الدكتورة سلمى محمد الحبيشي",
+    default: "عيادة التغذية العلاجية والحميات — الدكتورة سلمى محمد الحبيشي",
+    template: "%s | عيادة التغذية العلاجية — الدكتورة سلمى محمد الحبيشي",
   },
   description:
     "عيادة متخصصة في التغذية العلاجية والحميات الغذائية بإشراف الدكتورة سلمى محمد الحبيشي، مع خطط مخصصة ومتابعة دقيقة لكل حالة.",
@@ -32,46 +29,52 @@ export const metadata: Metadata = {
     "تحليل InBody",
   ],
   alternates: { canonical: "/" },
-  applicationName:
-    "عيادة التغذية العلاجية — بإشراف الدكتورة سلمى محمد الحبيشي",
+  applicationName: "عيادة التغذية العلاجية — بإشراف الدكتورة سلمى محمد الحبيشي",
   authors: [{ name: "الدكتورة سلمى محمد الحبيشي" }],
   creator: "الدكتورة سلمى محمد الحبيشي",
   publisher: "عيادة التغذية العلاجية بإدارة الدكتورة سلمى محمد الحبيشي",
   openGraph: {
     type: "website",
     url: "/",
-    siteName:
-      "عيادة التغذية العلاجية — بإشراف الدكتورة سلمى محمد الحبيشي",
+    siteName: "عيادة التغذية العلاجية — بإشراف الدكتورة سلمى محمد الحبيشي",
     title:
       "الصفحة الرئيسية — عيادة التغذية العلاجية (الدكتورة سلمى محمد الحبيشي)",
     description:
       "حلول تغذية علاجية مبنية على العلم وبرامج مخصصة بإشراف الدكتورة سلمى محمد الحبيشي.",
   },
-icons: {
+  icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/web-app-manifest-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/web-app-manifest-512x512.png', sizes: '512x512', type: 'image/png' }
+      { url: "/favicon.ico" },
+      {
+        url: "/web-app-manifest-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/web-app-manifest-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
     other: [
       {
-        rel: 'mask-icon',
-        url: '/icon0.svg',
-        color: '#000000'
-      }
-    ]
+        rel: "mask-icon",
+        url: "/icon0.svg",
+        color: "#000000",
+      },
+    ],
   },
-  manifest: '/site.webmanifest',
+  manifest: "/site.webmanifest",
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'default',
-    title: 'Track',
+    statusBarStyle: "default",
+    title: "الدكتورة سلمى محمد الحبيشي - عيادة التغذية العلاجية",
   },
   formatDetection: {
-    telephone: false
+    telephone: false,
   },
 };
 
@@ -81,8 +84,6 @@ const cairo = Cairo({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-
-
 export default function RootLayout({
   children,
 }: {
@@ -90,6 +91,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl" className={cairo.className}>
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className="antialiased bg-gray-50">
         <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
